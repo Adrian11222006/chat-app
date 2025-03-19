@@ -113,43 +113,62 @@ body {
   align-self: flex-end;
 }
 
-.input-container {
+.input-form {
+  display: flex;
+  gap: 15px;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 15px;
-  display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
-.message-input {
+input[type="text"] {
   flex: 1;
+  min-width: 200px;
   padding: 15px 20px;
-  border: 1px solid var(--border-color);
+  font-size: 1.1rem;
+  border: 2px solid var(--border-color);
   border-radius: 10px;
   background-color: var(--input-color);
   color: var(--text-color);
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
   outline: none;
-  transition: border-color 0.3s;
-}
-
-.message-input:focus {
   border-color: #8e8ea0;
+  box-shadow: 0 0 10px rgba(142, 142, 160, 0.3);
 }
 
-.send-button {
-  padding: 15px 30px;
-  background-color: var(--secondary-color);
+button[type="submit"] {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: var(--text-color);
+  background-color: #4a4b5a;
   border: none;
   border-radius: 10px;
-  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  min-width: 150px;
 }
 
-.send-button:hover {
-  background-color: var(--hover-color);
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #5a5b6a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:disabled {
+  background-color: #3a3b4a;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 /* Scrollbar styles */
